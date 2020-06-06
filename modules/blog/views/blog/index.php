@@ -29,19 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             [
                 'attribute' => 'created_at',
-                'label' => 'Создан',
                 'format' => 'datetime'
             ],
             [
                 'attribute' => 'created_by',
-                'label' => 'Автор',
                 'value' => function (Blog $model) {
                     return $model->createdBy->name;
                 }
             ],
             [
                 'attribute' => 'title',
-                'label' => 'Название',
             ],
             [
                 'label' => 'Тэги',

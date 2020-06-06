@@ -14,18 +14,17 @@ use app\models\Tag;
 
     <?php $form = ActiveForm::begin(); ?>
 
-
     <?= $form->field($model, 'blog_id')
         ->dropDownList(Blog::find()
             ->select('title')
             ->indexBy('id')
             ->column())->label('Блог') ?>
 
-    <?= $form->field($model, 'tag_id')
-        ->dropDownList(Tag::find()
-            ->select('name')
-            ->indexBy('id')
-            ->column())->label('Тэг') ?>
+        <?= $form->field($model, 'tag_id')
+            ->dropDownList(Tag::find()
+                ->select('name')
+                ->indexBy('id')
+                ->column())->label('Тэг') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

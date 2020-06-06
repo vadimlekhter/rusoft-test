@@ -41,8 +41,8 @@ class BlogTag extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'blog_id' => 'Blog ID',
-            'tag_id' => 'Tag ID',
+            'blog_id' => 'Блог',
+            'tag_id' => 'Тэги',
         ];
     }
 

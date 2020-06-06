@@ -78,11 +78,11 @@ class Blog extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'created_at' => 'Created At',
-            'created_by' => 'Created By',
-            'published' => 'Published',
-            'title' => 'Title',
-            'text' => 'Text',
+            'created_at' => 'Создан',
+            'created_by' => 'Автор',
+            'published' => 'Опубликовано',
+            'title' => 'Название',
+            'text' => 'Текст',
         ];
     }
 

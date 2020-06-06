@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use mihaildev\ckeditor\CKEditor;
+use app\models\Author;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Blog */
@@ -15,22 +16,22 @@ use mihaildev\ckeditor\CKEditor;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'created_by')
-        ->dropDownList(app\models\Author::find()
+        ->dropDownList(Author::find()
             ->select('name')
             ->indexBy('id')
-            ->column())->label('Автор') ?>
+            ->column()) ?>
 
     <?= $form->field($model, 'published')
         ->dropDownList(\app\models\Blog::STATUS_LABELS)->label('Опубликовать') ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true])->label('Название') ?>
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'text')->widget(CKEditor::className(), [
         'editorOptions' => [
             'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
             'inline' => false, //по умолчанию false
         ],
-    ])->label('Текст'); ?>
+    ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Cохранить', ['class' => 'btn btn-success']) ?>

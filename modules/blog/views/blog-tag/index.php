@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use app\models\BlogTag;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\BlogTagSearch */
@@ -28,8 +29,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'blog_id',
-            'tag_id',
+            [
+                'attribute' => 'blog_id',
+                'value' => function (BlogTag $model) {
+                    return $model->blog->title;
+                }
+            ],
+            [
+                'attribute' => 'tag_id',
+                'value' => function (BlogTag $model) {
+                    return $model->tag->name;
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn',
                 'template' => '{delete}'],

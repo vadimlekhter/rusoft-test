@@ -13,6 +13,18 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
         '@tests' => '@app/tests',
     ],
+    'controllerMap' => [
+        'migrate-blog' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationNamespaces' => ['app\migrations\blog'],
+            'migrationTable' => 'migration_blog',
+        ],
+        'migrate-blog-data' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationNamespaces' => ['app\migrations\blog\data'],
+            'migrationTable' => 'migration_blog_data',
+        ],
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',

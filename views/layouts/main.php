@@ -43,6 +43,7 @@ AppAsset::register($this);
             ['label' => 'Тэги', 'url' => ['/blog/tag']],
             ['label' => 'Блог-Тэг', 'url' => ['/blog/blog-tag']],
             ['label' => 'Авторы', 'url' => ['/blog/author']],
+            ['label' => 'Картинки', 'url' => ['/image']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
